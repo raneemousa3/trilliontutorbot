@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <TItle>STEM TutorBot</TItle>
+        <meta name="descrption" content="This is the description">
+        <link rel="stylesheet" href="/Static/stylebotix.css">
+    </head>
+<body class="body_chat">
+    <header >
+        <nav class="nav main-nav">
+            <ul>
+                <li><a href="/Static/frontend.html">RESEARCH</a></li>
+                    <li><a href="/Static/Abstract.html">ETHICS</a></li>
+                        <li><a href="{{url_for('home')}}">PREPARE</a></li>
+            </ul>
+        </nav>
+        
+    </header>    <!-- screen before chat starts-->
+
+    <h1 class="band band-large">STEM TutorBot</h1>
+    <h1 class="band-largey"></h1>
+
+<div class="chat-container">
+  <!-- Existing chat container content -->
+</div>
+
+<label for="message">ProfBoticx is here to help if you need more assistance</label>
+<form method="post" action="{{ url_for('chatbot') }}" enctype="multipart/form-data" class="input-form">
+    <div class="input-container">
+      
+      <input class="content2 container" type="text" id="message" name="message" required>
+    </div>
+    <button type="submit">Blast off</button>
+    <div>
+      <label for="image" class="custom-file-upload">
+        <span>Choose an Image</span>
+        <input class="file-input" type="file" id="image" name="image" accept="image">
+      </label>
+    </div>
+  </form>
+  
+  
+
+</body>
+</html>

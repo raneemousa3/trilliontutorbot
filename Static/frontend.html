@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <TItle>STEM TutorBot</TItle>
+    <meta name="descrption" content="This is the description">
+    <link rel="stylesheet" href="stylebotix.css">
+    <script defer src="h.js"></script>
+
+    <meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1"
+		/>
+
+		
+		<meta property="og:url" content="https://gradio.app/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="{{ config['thumbnail'] or '' }}" />
+		<meta property="og:title" content="{{ config['title'] or '' }}" />
+		<meta
+			property="og:description"
+			content="{{ config['simple_description'] or '' }}"
+		/>
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:creator" content="@teamGradio" />
+		<meta name="twitter:title" content="{{ config['title'] or '' }}" />
+		<meta
+			name="twitter:description"
+			content="{{ config['simple_description'] or '' }}"
+		/>
+		<meta name="twitter:image" content="{{ config['thumbnail'] or '' }}" />
+
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Topic', 'ChatGPT', 'Non-ChatGPT'],
+          ['Calculus-Differentiation',7,10],
+          ['Linear Algebra', 6.5, 9],
+          ['Diferential Equation', 5, 9.5],
+        ]);
+
+        var options = {
+  width: 700,
+  height: 400,
+  colors:['#d6d0b8', '#f1f4c6'],
+  chart: {
+    title: '',
+    subtitle: 'Median Score-ChatGPT Vs. Non ChatGPT - Figure 1',
+    subtitleTextStyle:{
+      color:'#ffffff',
+      fontName:'Amatic sc',
+      fontSize:'24'
+    },
+    
+  },
+  chartArea: {
+    backgroundColor: {
+      fill: '#7d8cfc',
+      fillOpacity: 0.1
+    }
+  },
+  backgroundColor: {
+    fill: '#7d8cfc',
+    fillOpacity: 0.8
+  },
+  hAxis: {
+    textStyle: {
+      color: '#ffffff ',
+      fontName: 'Amatic SC',
+      fontSize: '20'
+    }
+  },
+  vAxis: {
+    textStyle:{
+      color:'#ffffff',
+      fontName: 'Amatic SC',
+      fontSize: '20'
+    }
+    
+  },
+  legend: {
+    textStyle: {
+      color: '#ffffff',
+      fontName: 'Amatic SC',
+      fontSize: '16'
+    }
+  },
+			
+			
+          
+          bars: 'horizontal', // Required for Material Bar Charts.
+          series: {
+            0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
+          },
+          axes: {
+            x: {
+              distance: {label: 'score(out of 10)'}, // Bottom x-axis.
+              brightness: {side: 'top', label: ''} // Top x-axis.
+            }
+          },
+		  
+        };
+
+
+        var materialChart = new google.charts.Bar(document.getElementById('dual_x_div'));
+    materialChart.draw(data, google.charts.Bar.convertOptions(options),{fontName:'Roboto',fontSize:'24',color:'ffffff'});
+ };
+    
+    </script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+   google.charts.load('current', {'packages':['bar']});
+   google.charts.setOnLoadCallback(drawStuff);
+
+   function drawStuff() {
+    var data = new google.visualization.arrayToDataTable([
+['Median Confidence level ', 'ChatGPT', 'Non-ChatGPT'],
+['Calculus-Differentiation',9,7],
+['Linear Algebra', 5, 7],
+['Diferential Equation', 7, 6.75],
+]);
+
+
+var options = {
+  width: 700,
+  height: 400,
+  colors:['#d6d0b8', '#f1f4c6'],
+  chart:{
+    title: '',
+    subtitle: 'Confidence level-ChatGPT vs.None ChatGPT - Figure 2',
+    titleTextStyle:{
+      color:'#ffffff',
+      fontName:'Amatic sc',
+      fontSize:'24'
+    }
+  },
+  chartArea: {
+    backgroundColor: {
+      fill: '#7d8cfc',
+      fillOpacity: 0.1
+    }
+  },
+  backgroundColor: {
+    fill: '#7d8cfc',
+    fillOpacity: 0.8
+  },
+  hAxis: {
+    textStyle: {
+      color: '#ffffff ',
+      fontName: 'Amatic SC',
+      fontSize: '20'
+    }
+  },
+  vAxis: {
+    textStyle:{
+      color:'#ffffff',
+      fontName: 'Amatic SC',
+      fontSize: '20'
+    }
+    
+  },
+       bars: 'horizontal', // Required for Material Bar Charts.
+       series: {
+         0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
+         1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
+       },
+       axes: {
+         x: {
+           distance: {label: '(out of 10)'}, // Bottom x-axis.
+           brightness: {side: 'top', label: ''} // Top x-axis.
+         }
+       },
+       legend: {
+    textStyle: {
+      color: '#ffffff',
+      fontName: 'Amatic SC',
+      fontSize: '16'
+    }
+  },
+   
+     };
+
+
+   var materialChart = new google.charts.Bar(document.getElementById('d_x_div'));
+    materialChart.draw(data, google.charts.Bar.convertOptions(options),{fontName:'Roboto'});
+ };
+ </script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['', 'time(min)',],
+        ['Non-ChatGPT users', 95],
+        ['ChatGPT users',67],
+        
+      ]);
+
+      var options = {
+  width: 800,
+  height: 500,
+  legend:'left',
+  colors:['#522E6B', '#A09A9E'],
+  chart: {
+    title: '',
+    subtitle: 'ChatGPT VS. Non chatGPT timetaken(min) - Figure 3',
+    titleTextStyle: {
+      color: '#fff'
+}
+  },
+  chartArea: {
+    backgroundColor: {
+      fill: '#7d8cfc',
+      fillOpacity: 0.1
+    }
+  },
+  backgroundColor: {
+    fill: '#7d8cfc',
+    fillOpacity: 0.8
+  },
+  hAxis: {
+    textStyle: {
+      color: '#ffffff ',
+      fontName: 'Amatic SC',
+      fontSize: '20'
+    }
+  },
+  vAxis: {
+    textStyle:{
+      color:'#ffffff',
+      fontName: 'Amatic SC',
+      fontSize: '20'
+    }
+    
+  },
+  legend: {
+    textStyle: {
+      color: '#ffffff',
+      fontName: 'Amatic SC',
+      fontSize: '16'
+    }
+  },
+
+
+
+  };
+
+    
+
+
+     
+      var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+    materialChart.draw(data, google.charts.Bar.convertOptions(options),{fontName:'Roboto'});
+    }
+  </script>
+
+
+<body>
+    <header class="main-header">
+        <nav class="nav main-nav">
+            <ul>
+                <li><a href="/Static/frontend.html">RESEARCH</a></li>
+                    <li><a href="/Static/Abstract.html">ETHICS</a></li>
+                        <li><a href=/index">PREPARE</a></li>
+            </ul>
+        </nav>
+        <h1 class="band band-large">The impacts of ChatGPT on the performance of Math and computer Science students  </h1>
+    </header>
+    <section class="content container hidden">
+        <h2 class="section-header">Is ChatGPT the STEM learning catalyst we've all been waiting for? </h2>
+        <img class="aboutband2" src="gpt2.png"width="600" height="700"/>
+        
+		<span class="hidden">
+			<br></br>
+			<p>
+        The current excitement around chatGPT emphasizes its capability to revolutionize various fields and industries. However, it is important to approach these claims with care, particularly when considering AI's impact on STEM fields, which we will be discussing today. While it is undeniable that AI will play a role in integrating with STEM education, it is essential to  address the potential issues of inaccuracies and ethical concerns that may arise when incorporating unsupervised automated responses.
+
+				  To fully understand the impact of ChatGPT on education, it is crucial to conduct a comprehensive analysis of its benefits and drawbacks,
+				   so with that being said lets spill some tea</p>
+				   </span>
+
+			<span>
+				<br></br>
+				<h1 class="box importantwww hidden" >Questions to be explored</h1>
+
+				<ul class="box hidden">
+                    <li> <div class="importantww"></div></div>Does the implementation of ChatGPT result in a noticeable improvement in students' proficiency in math and computer science disciplines ?</li>
+                    <li><div class="importantww"></div>Does ChatGPT increase the efficiency of the learning process in STEM fields?
+					</li>
+                    <li><div class="importantww"></div> Under what circumstances does ChatGPT have a positive impact on learning in STEM education, and in what cases does it have a negative impact?
+					</li>
+                    <li><div class="importantww"></div> Does the utilization of ChatGPT outweigh any potential mis-usage?</li>
+                  </ul>
+			</span>
+			<span>
+				<h1 class="box importantwww hidden" >Process</h1>
+				<p>To gain a deeper understanding of ChatGPT's use, we conducted a controlled experiment involving four groups of students.
+					 The Mathematics department had two groups: one using ChatGPT and another without it, while the same approach was applied to a group from the Computer Science department. Carefully selected assignments, evaluated by experts, 
+					 covered crucial math and computer science concepts and assessed critical thinking. Performance, confidence levels, and completion time were recorded. 
+					 Although the focus was on Math and Computer Science students, the assessment encompassed skills applicable to all STEM fields, allowing for potential extrapolation.
+					 Recruited students had comparable skills to minimize bias.In addition to the experiment,
+					  the research involved pre-interviews conducted before evaluating the student responses and post-interviews conducted after evaluating the responses. Experts were requested to use ChatGPT as a tool in the weeks leading up to the interviews and 
+					 then evaluate the responses generated by ChatGPT for the course assignment prompts.
+				</p>
+					   </span>
+					   <h1 class="box importantwww hidden" >Data and Findings</h1>
+			<span class="box graph-container hidden"> 
+					
+					<div>
+         <span class="hidden">
+					<div id="dual_x_div"  class="chart-text hidden" style="width: 800px; height: 500px;"></div>
+          <div>The results indicate that students who did not use ChatGPT assistance in math achieved higher grades compared to those who used ChatGPT for topics like DFQ, Calculus, and Linear Algebra. The median total grade for students who used ChatGPT was 19/30, whereas those who didn't use it scored 28/30.
+
+            <br></br>Interestingly, although the working process and explanations provided by ChatGPT seemed correct, the final answers were incorrect due to apparent arithmetic mistakes. When students using ChatGPT broke down the question into parts and employed prompt engineering techniques instead of directly copying the question into the chatbox, they were able to obtain the correct answers.
+            
+            It is worth noting that participants who copied the exact question into ChatGPT received different answers, even though the question was the same. One would expect ChatGPT to provide consistent answers for the same question in math, as math is not subjective. However, ChatGPT seemingly generated different answers for each instance of the same question.</div>
+            </span>
+         
+          <br></br>
+           <br></br>
+           <span class="hidden">
+          <div id="d_x_div"  class="chart-text hidden" style="width: 800px; height: 500px;"></div>
+          <div >Figure 2 reveals valuable insights about the participants' confidence levels regarding their answers in each part of the experiment. Interestingly, when comparing the average confidence of participants using ChatGPT versus non-ChatGPT students, it is observed that the former had a slightly higher confidence level, with scores of 7 and 6.5 respectively.
+
+            This suggests that ChatGPT's responses can be convincingly presented, even though ChatGPT did not provide any correct answers. However, it is important to note that the confidence level of ChatGPT users might not have been as high as expected due to the nature of its responses.
+            <br></br>
+             As one participant aptly pointed out, 
+            "I am unfamiliar with this type of question so I purely based on ChatGPT to complete the question. At first, I got an answer saying that the question is incorrect (technically it’s impossible to have that equation). However, after I regenerated the response, it gave me a definite answer. For this question, I have to create a new chat and change some wording of my question so that it can ‘understand?’ what I am trying to ask for."
+            
+            This participant's feedback highlights an important aspect: when users are unfamiliar with a topic, ChatGPT's responses can be Misleading and confusing.This observation suggests that while ChatGPT can provide responses, its effectiveness and accuracy heavily depend on the student's familiarity with the topic and the clarity of their questions.
+            </div>
+            </span>
+            <h1 class="box importantww hidden" >Examples</h1>
+            <div class="images">
+              
+              <div class="image hidden imagestyle"> <img src="chat1.jpg"width="400"height="400" ></div>
+              <div class="image hidden imagestyle"> <img src="chat2.jpg"width="400"height="400" ></div>
+              <div class="image hidden imagestyle"> <img src="chat3.jpg" width="400"height="400"></div>
+            </div>
+				</div>
+        
+			
+				
+			</span>
+      <br></br>
+      <span>
+      
+
+ </span>
+     <br></br>
+   
+          <div class="container1 ">
+            <div class="text1">
+              
+              <div>
+                <br></br>
+                
+                According to the findings presented in Figure 3, it was observed that ChatGPT was able to complete tasks in less time compared to participants who used ChatGPT. Specifically, ChatGPT took 35% less time on average.
+              </div>
+            </div>
+            <div class="chart1">
+              <div id="chart_div" class="chart-text chart1 hidden" style="width: 800px; height: 500px;"></div>
+              
+            </div>
+          </div>
+          
+        
+          <!-- Include the necessary code to render your graph here -->
+          <br></br>
+          <span>
+        <div>ChatGPT, specifically GPT-3.5, is trained on a relatively large database and operates in an unsupervised manner. 
+          As a result, there is a possibility of it being inaccurate despite its cohesiveness and apparent fluency. 
+          In the case of math problems, the final answers provided by ChatGPT were consistently incorrect, but the participants appeared confident in their responses. However, the explanations given were consistently impressive and on point, akin to a skilled math student who did not have access to a calculator during an exam. A recent case study conducted by the mathematics department at the University of Polytechnic involved surveying 110 students.
+           One of the survey questions asked was, "Do you believe that using ChatGPT has helped you learn or reinforce mathematical concepts covered in Mathematics I?" The responses ranged from 1 (No, it has not helped me) to 5 (Yes, a lot of times), with a median response of 4.00. This indicates that the students were satisfied with ChatGPT's responses and recognized its positive impact on their understanding. The same survey also asked students if they used ChatGPT assistance to complete official assignments, with a median response of 2. Another survey question inquired about the students' opinions on integrating ChatGPT into their learning, and the median response was 4.00. This demonstrates that students feel the need for ChatGPT integration as it provides valuable assistance. ChatGPT not only provides final answers but also offers step-by-step explanations that can enhance a person's understanding.</div>
+          <br></br>
+          <p>Although the free version of GPT-3.5 may not be accurate in mathematics, a recent study conducted by MIT faculty focused on GPT-4, the premium version of ChatGPT. This study involved testing the technology on approximately  4,500 questions across various subjects in engineering and mathematics. The results showed a remarkable 100% accuracy with the right usage of prompt engineering , compared to a 33% accuracy level with GPT-3.5. This highlights the significant improvement in accuracy offered by the more updated version of ChatGPT. It is inevitable that we are on the verge of gaining free access to a more accurate and advanced iteration of ChatGPT, which calls for us to adapt our old learning techniques to leverage these advancements effectively.
+          </p>
+          <br></br>
+          <p>As AI continues to advance, teachers and educators understandably have concerns about issues of integrity and unethical practices associated with its development. However, it is important to recognize the potential benefits of embracing such advancements and utilizing them to enhance learning. AI can be a valuable tool for students who may have struggled to grasp certain concepts in class or lacked access to additional tutoring or resources. It can help them understand and learn at their own pace more efficiently, thereby making education more accessible to all. However, students also have a responsibility to use AI wisely, employing it as a means to understand concepts and maximize their learning experience. Educators will adapt by establishing boundaries and guidelines that align with their comfort levels.
+             This may involve increasing in-class examinations or implementing specific policies to adapt to these technological advancements.</p>
+          <p>"We should envision a technology-enhanced future more like an electric bike and less like robot vacuums. On an electric bike, the human is fully aware and fully in control, but their burden is less and their effort is multiplied by the supporting technology. It is crucial to ensure that humans maintain control and responsibility over the use and outcomes of AI systems," said Kristina Ishmael in the "AI and the Future of Teaching with AI" webinar. By viewing AI as an empowering tool that supports and complements human capabilities instead of replacing them, we can strive for a harmonious integration of technology and human potential. This approach drives progress and innovation while preserving our ethical principles and values.
+            <br></br>With that being said, I encourage the adaptation of STEM learning to make use of AI in order to enhance STEM students' learning, without fear of it taking over. Just like how the invention of calculators didn't replace mathematicians but rather enhanced their efficiency, allowing them to focus more on critical thinking and idea generation
+            
+            
+          </p>
+               </span>
+
+	
+    </section>
+    <footer class="main-footer">
+
+        <h3 class="bandl">Reference</h3>
+        <div class="container main-footer-container">
+          <ul class="box">
+            <li> Gwo-Jen Hwang & Nian-Shing Chen. (2023). Editorial Position Paper: Exploring the Potential of Generative Artificial Intelligence in Education: Applications, Challenges, and Future Research Directions. Journal of Educational Technology & Society, 26(2), 1–18. https://doi.org/10.30191/ETS.202304_26(2).0014
+
+            </li>
+            <li>Karaali, G. (2023). Artifificial Intelligence, Basic Skills, and Quantitative Literacy. Numeracy: Advancing Education in Quantitative Literacy, 16(1), 1–20. https://doi.org/10.5038/1936-4660.16.1.1438
+
+            </li>
+            <li>Lo, C. K. (2023). What Is the Impact of ChatGPT on Education? A Rapid Review of the Literature. Education Sciences, 13(4), 410. https://doi.org/10.3390/educsci13040410
+
+            </li>
+            <li>Rahman, Md. M., & Watanobe, Y. (2023). ChatGPT for Education and Research: Opportunities, Threats, and Strategies. Applied Sciences (2076-3417), 13(9), 5783. https://doi.org/10.3390/app13095783
+
+            </li>
+            <li>Sánchez-Ruiz, L. M., Moll-López, S., Nuñez-Pérez, A., Moraño-Fernández, J. A., & Vega-Fleitas, E. (2023). ChatGPT Challenges Blended Learning Methodologies in Engineering Education: A Case Study in Mathematics. Applied Sciences (2076-3417), 13(10), 6039. https://doi.org/10.3390/app13106039
+
+            </li>
+            <li> Tafferner, Z., Illés, B., Krammer, O., & Géczy, A. (2023). Can ChatGPT Help in Electronics Research and Development? A Case Study with Applied Sensors. Sensors (14248220), 23(10), 4879. https://doi.org/10.3390/s23104879
+
+
+            </li>
+            <li>Bender, E. M., & Major, A. M. (2020). (rep.). On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? (pp. 1–14). Seattle, washington. 
+
+
+
+            </li>
+       
+          </ul>
+            
+
+                        </div>
+      
+
+    
+    </footer>
+
+   
+</body>
+
+</html>
